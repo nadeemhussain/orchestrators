@@ -1,0 +1,39 @@
+CREATE DCOS CLUSTER IN AZURE
+
+-----------------------------------------------
+
+az login
+az account set --subscription 91b61812-5f03-46a9-a25e-c31eaf0c81fe
+az group list
+az group create --name myResourceGroup --location eastus
+az acs create --orchestrator-type dcos --resource-group myResourceGroup --name myDCOSCluster --generate-ssh-keys
+ssh -i ~/.ssh/id_rsa -fNL 80:localhost:80 -p 2200 azureuser@52.170.19.58
+dcos config set core.dcos_url http://localhost:8080
+.\dcos.exe config set core.dcos_url http://localhost:8080
+dcos marathon app add marathon-app.json
+.\dcos.exe marathon app list
+
+
+access chronos 
+--------------------------
+
+http://localhost:8080/service/chronos/
+curl chronos.mesos:
+
+
+access marathon 
+
+----------------------------
+
+http://localhost:8080/service/marathon/ui/#/apps
+curl marathon.mesos:8080/v2/apps
+curl -H "Content-Type: application/json" -X POST marathon.mesos:8080/v2/apps -d "@a.json"
+
+
+
+mesos 
+
+---------------------------------
+
+curl master.mesos:5050/frameworks
+  

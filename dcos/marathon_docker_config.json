@@ -1,0 +1,27 @@
+{
+  "id": "demo-app-1",
+  "cmd": null,
+  "cpus": 1,
+  "mem": 32,
+  "disk": 0,
+  "instances": 1,
+  "container": {
+    "docker": {
+      "image": "nginx",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8990,
+          "hostPort": 8000,
+          "protocol": "tcp",
+          "name": "8990",
+          "labels": null
+        }
+      ]
+    },
+    "type": "DOCKER"
+  },
+  "acceptedResourceRoles": [
+    "slave_public"
+  ]
+}
