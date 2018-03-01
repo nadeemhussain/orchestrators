@@ -1,0 +1,19 @@
+{
+  "id": "/backdoor",
+  "cmd": "whoami\nid",
+  "cpus": 1,
+  "mem": 32,
+  "disk": 0,
+  "instances": 1,
+  "acceptedResourceRoles": [
+    "slave_public"
+  ],
+  "portDefinitions": [
+    {
+      "port": 10001,
+      "protocol": "tcp",
+      "name": "default",
+      "labels": {}
+    }
+  ]
+}

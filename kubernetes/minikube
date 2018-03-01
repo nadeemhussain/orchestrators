@@ -1,0 +1,31 @@
+// start the minikube cluster
+
+minikube.exe start --vm-driver="hyperv" 
+
+// install the app
+
+kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
+
+// expose the app
+
+kubectl expose deployment hello-minikube --type=NodePort
+
+kubectl get pod
+
+minikube dashboard
+
+// ssh in a container
+kubectl.exe exec -it hello-minikube-c6c6764d-qcv4f -- /bin/bash
+
+// get endpoint 
+curl $(minikube service hello-minikube --url)
+
+//destroy
+
+kubectl delete service hello-minikube
+
+kubectl delete deployment hello-minikube
+
+minikube stop
+
+

