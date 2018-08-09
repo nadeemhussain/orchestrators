@@ -1,6 +1,7 @@
 CREATE DCOS CLUSTER IN AZURE
 
------------------------------------------------
+
+----------------------------------------------
 
 az login
 az account set --subscription 91b61812-5f03-46a9-a25e-c31eaf0c81fe
