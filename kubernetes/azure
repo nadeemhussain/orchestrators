@@ -1,4 +1,4 @@
-az login
+ az login
 az account set --subscription 91b61812-5f03-46a9-a25e-c31eaf0c81fe
 az group create --name myResourceGroup --location eastus
 az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 2 --generate-ssh-keys
