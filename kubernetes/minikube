@@ -1,4 +1,4 @@
-// start the minikube cluster
+ // start the minikube cluster
 
 minikube.exe start --vm-driver="hyperv" 
 
